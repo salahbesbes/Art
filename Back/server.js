@@ -3,6 +3,7 @@ const app = express();
 const ConnectDB = require("./mongoose");
 const users = require("./Routes_Art_Wear/users");
 const products = require("./Routes_Art_Wear/search")
+const Commande = require("./Routes_Art_Wear/Commande")
 
 //connecting to database
 ConnectDB();
@@ -14,6 +15,7 @@ app.use(express.json({ extended: false })); // never forget this line to parse J
 
 app.use("/artwear", users);
 app.use("/artwear", products);
+app.use("/artwear", Commande);
 
 
 app.listen(PORT, () => console.log("server is runnig on port " + PORT));

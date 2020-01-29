@@ -29,7 +29,7 @@ const Navbar = ({ LogOut, commande }) => {
           </Link>
         </li>
         <li>
-          <Link to="/signin" title="login">
+          <Link to="/allorders" title="login">
             <i className="fas fa-sign-out-alt"></i>
             <span className="hide-sm">Login</span>
           </Link>
