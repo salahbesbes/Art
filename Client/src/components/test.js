@@ -4,7 +4,10 @@ export default class test extends Component {
     render() {
         return (
             <div>
-                test
+              sssdlkskf,qkjfkjfkv,ùqg
+              qjxck,vlckjjvlqfdkj
+              skcvqjdjlkcvù
+              sdfqdsfsdqfsd
             </div>
         )
     }
