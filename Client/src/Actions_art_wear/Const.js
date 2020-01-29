@@ -15,3 +15,5 @@ export const DELETE_USER = "DELETE_USER";
 
 
 export const ADD_TO_CART = "ADD_TO_CART";
+export const ADD_ORDER_TO_DB = "ADD_ORDER_TO_DB";
+export const GET_ALL_ORDERS = "GET_ALL_ORDERS";

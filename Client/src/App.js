@@ -7,8 +7,9 @@ import ProductCard from "./components/ProductCard";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import UserProfile from "./components/UserProfile";
-import AdminPage from "./components/AdminPage";
+import Allusers from "./components/Allusers";
 import Cart from "./components/Cart";
+import Allorders from "./components/Allorders";
 
 function App() {
   return (
@@ -17,9 +18,10 @@ function App() {
         <Navbar />
 
         <Switch>
-        <Route exact path="/userprofile" component={UserProfile} />
-        <Route exact path="/admin" component={AdminPage} />
-        <Route exact path="/panier" component={Cart} />
+          <Route exact path="/allorders" component={Allorders} />
+          <Route exact path="/userprofile" component={UserProfile} />
+          <Route exact path="/admin" component={Allusers} />
+          <Route exact path="/panier" component={Cart} />
           <Route exact path="/signin" component={Login} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/catalogue" component={ListOfCatalogue} />

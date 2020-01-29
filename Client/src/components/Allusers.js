@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { get_all_Users, delete_User } from "../Actions_art_wear/signAction";
 
-const AdminPage = ({ get_all_Users, users = [], delete_User }) => {
+const Allusers = ({ get_all_Users, users = [], delete_User }) => {
   useEffect(() => {
     get_all_Users();
   }, []);
@@ -42,5 +42,5 @@ const mapstatetoprops = state => {
   };
 };
 export default connect(mapstatetoprops, { get_all_Users, delete_User })(
-  AdminPage
+  Allusers
 );

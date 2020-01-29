@@ -1,15 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
+import { add_Commande_To_Db } from "../Actions_art_wear/Cart_And_Order_Action";
 
-const Cart = ({ commande }) => {
-  // const user = { ...this.props.user };
-  const element = [...commande];
+const Cart = ({ commande, add_Commande_To_Db }) => {
   return (
     <section className="shopping-cart spad">
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-            {/* { console.log(element.map(el => (el.name === ' pull')? el.qte === 5) )} */}
             <div className="cart-table">
               {commande.length === 0 ? (
                 <div className="bg-danger"> No Article Added</div>
@@ -27,12 +25,11 @@ const Cart = ({ commande }) => {
                       </th>
                     </tr>
                   </thead>
+
                   <tbody>
                     {commande.map((el, i) => (
                       <tr key={i}>
-                        <td className="cart-pic first-row">
-                          {/* <img src="img/cart-page/product-1.jpg" alt="" /> */}
-                        </td>
+                        <td className="cart-pic first-row"></td>
                         <td className="cart-title first-row">
                           <h5>{el.name}</h5>
                         </td>
@@ -40,7 +37,7 @@ const Cart = ({ commande }) => {
                         <td className="qua-col first-row">
                           <div className="quantity">
                             <div className="pro-qty">
-                              <span type="text">{el.qte} </span>
+                              <span type="text">{el.qte}</span>
                             </div>
                           </div>
                         </td>
@@ -53,11 +50,18 @@ const Cart = ({ commande }) => {
                       </tr>
                     ))}
                   </tbody>
-                  <button className="btn btn-success">
-                    confirmer la commande
-                  </button>
                 </table>
               )}
+              <button
+                className="btn btn-success"
+                onClick={
+                  commande.length !== 0
+                    ? () => add_Commande_To_Db(commande)
+                    : null
+                }
+              >
+                confirmer la commande
+              </button>
             </div>
           </div>
         </div>
@@ -71,4 +75,4 @@ const mapstatetoprops = state => {
     commande: state.panier_Reducer // state take the name of the file of reducer
   };
 };
-export default connect(mapstatetoprops, {})(Cart);
+export default connect(mapstatetoprops, { add_Commande_To_Db })(Cart);
